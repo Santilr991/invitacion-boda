@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 840" role="img" aria-label="Foto de la pareja 3 — próximamente">
+  <defs>
+    <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F8F4EC"/>
+      <stop offset="1" stop-color="#E4C9B8"/>
+    </linearGradient>
+  </defs>
+  <rect width="840" height="840" fill="url(#g3)"/>
+  <circle cx="420" cy="380" r="205" fill="none" stroke="#B5644A" stroke-width="2" opacity="0.5"/>
+  <circle cx="420" cy="380" r="150" fill="#B5644A" opacity="0.08"/>
+  <path d="M90 780 C 240 660 250 520 220 350" fill="none" stroke="#6C7F63" stroke-width="3" opacity="0.4"/>
+  <g fill="#6C7F63" opacity="0.4">
+    <ellipse cx="186" cy="556" rx="32" ry="13" transform="rotate(-34 186 556)"/>
+    <ellipse cx="226" cy="450" rx="28" ry="11" transform="rotate(-24 226 450)"/>
+  </g>
+  <text x="420" y="410" text-anchor="middle" font-family="Georgia, serif" font-size="115" fill="#B5644A" letter-spacing="10">B &amp; M</text>
+  <text x="420" y="478" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="22" fill="#8F4A37" letter-spacing="8">FOTO PRÓXIMAMENTE</text>
+  <text x="420" y="770" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="19" fill="#8A8578" letter-spacing="6">03 / 06</text>
+</svg>

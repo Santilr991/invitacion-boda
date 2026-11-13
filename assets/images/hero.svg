@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500" role="img" aria-label="Fotografía principal de la pareja — próximamente">
+  <defs>
+    <linearGradient id="heroGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#EDE6D8"/>
+      <stop offset="0.55" stop-color="#DCE3D4"/>
+      <stop offset="1" stop-color="#B9C6AE"/>
+    </linearGradient>
+    <radialGradient id="heroGlow" cx="0.5" cy="0.35" r="0.7">
+      <stop offset="0" stop-color="#FBF8F1" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#FBF8F1" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="1500" fill="url(#heroGrad)"/>
+  <rect width="1200" height="1500" fill="url(#heroGlow)"/>
+  <circle cx="600" cy="560" r="330" fill="none" stroke="#6C7F63" stroke-width="2" opacity="0.45"/>
+  <circle cx="600" cy="560" r="250" fill="#F8F4EC" opacity="0.35"/>
+  <circle cx="600" cy="560" r="190" fill="none" stroke="#B5644A" stroke-width="1.5" opacity="0.25"/>
+  <path d="M120 1380 C 260 1180 300 1000 280 760" fill="none" stroke="#6C7F63" stroke-width="3" opacity="0.35"/>
+  <path d="M1080 1400 C 940 1200 900 1020 930 780" fill="none" stroke="#6C7F63" stroke-width="3" opacity="0.35"/>
+  <g fill="#6C7F63" opacity="0.35">
+    <ellipse cx="250" cy="1030" rx="34" ry="14" transform="rotate(-30 250 1030)"/>
+    <ellipse cx="292" cy="900" rx="30" ry="12" transform="rotate(-20 292 900)"/>
+    <ellipse cx="948" cy="1060" rx="34" ry="14" transform="rotate(28 948 1060)"/>
+    <ellipse cx="908" cy="920" rx="30" ry="12" transform="rotate(18 908 920)"/>
+  </g>
+  <g fill="#B5644A" opacity="0.2">
+    <ellipse cx="380" cy="1180" rx="40" ry="15" transform="rotate(-24 380 1180)"/>
+    <ellipse cx="820" cy="1180" rx="40" ry="15" transform="rotate(24 820 1180)"/>
+  </g>
+</svg>
