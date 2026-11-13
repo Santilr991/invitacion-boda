@@ -27,9 +27,10 @@
       mapsUrl: "https://www.google.com/maps/search/?api=1&query=Sal%C3%B3n%20de%20eventos",
     },
 
-    rsvpDeadline: "[fecha límite]",
+   rsvpDeadline: "[fecha límite]",
     maxGuests: 10,
     storageKey: "rsvp-bleidys-miguel",
+    sheetsWebhookUrl: "https://script.google.com/macros/s/AKfycbxmI1CZBQKPge7wEZ3Djm5TiwV7eBS7qnHgQ3oyfAyMTnK_S-sJ1M9dRWdfGeU7JOhNoA/exec",
   };
 
   const MONTHS = [
@@ -634,7 +635,7 @@
       if (payload.attendance === "si") confetti.launch();
     };
 
-    form.addEventListener("submit", (event) => {
+   form.addEventListener("submit", async (event) => {
       event.preventDefault();
 
       const data = new FormData(form);
@@ -677,13 +678,37 @@
         timestamp: new Date().toISOString(),
       };
 
-      try {
-        window.localStorage.setItem(CONFIG.storageKey, JSON.stringify(payload));
-      } catch (err) {
-        /* localStorage no disponible: el formulario sigue funcionando visualmente */
-      }
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const submitSpan = submitBtn ? submitBtn.querySelector("span") : null;
+      const originalText = submitSpan ? submitSpan.textContent : "";
 
-      showSuccess(payload);
+      if (submitBtn) submitBtn.disabled = true;
+      if (submitSpan) submitSpan.textContent = "Enviando...";
+
+      try {
+        await fetch(CONFIG.sheetsWebhookUrl, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify(payload),
+        });
+
+        try {
+          window.localStorage.setItem(CONFIG.storageKey, JSON.stringify(payload));
+        } catch (err) {
+          /* localStorage no disponible: el formulario sigue funcionando visualmente */
+        }
+
+        showSuccess(payload);
+      } catch (err) {
+        if (error) {
+          error.textContent = "No se pudo registrar tu confirmación. Revisa tu conexión e intenta de nuevo.";
+          error.hidden = false;
+        }
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+        if (submitSpan) submitSpan.textContent = originalText;
+      }
     });
 
     if (editBtn) {
