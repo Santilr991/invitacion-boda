@@ -248,11 +248,12 @@
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
+          } else if (entry.boundingClientRect.top >= (entry.rootBounds ? entry.rootBounds.bottom : window.innerHeight)) {
+            entry.target.classList.remove("is-visible");
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -70px 0px" }
+      { threshold: [0, 0.08], rootMargin: "0px 0px -40px 0px" }
     );
 
     elements.forEach((el) => observer.observe(el));
