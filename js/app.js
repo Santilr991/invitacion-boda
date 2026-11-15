@@ -16,17 +16,17 @@
     ceremony: {
       name: "Iglesia Inmaculada",
       time: "4:00 PM",
-      mapsUrl: "https://maps.app.goo.gl/t6i2Spw715Jc4tpR8",
+      mapsUrl: "https://maps.app.goo.gl/ByYaQt7G88xxpiAe8?g_st=iw",
     },
 
     reception: {
       name: "Sorento",
       time: "7:00 PM",
-      mapsUrl: "https://maps.app.goo.gl/B3GeAin8Zb8bgtxS8",
+      mapsUrl: "https://maps.app.goo.gl/2VYmACNBgF69FujZ6?g_st=iw",
     },
 
-   rsvpDeadline: "[fecha límite]",
-    maxGuests: 10,
+   rsvpDeadline: "[1 de diciembre de 2026]",
+    maxGuests: 3,
     storageKey: "rsvp-bleidys-miguel",
     sheetsWebhookUrl: "https://script.google.com/macros/s/AKfycbxmI1CZBQKPge7wEZ3Djm5TiwV7eBS7qnHgQ3oyfAyMTnK_S-sJ1M9dRWdfGeU7JOhNoA/exec",
   };
@@ -58,7 +58,7 @@
     setText("[data-groom]", CONFIG.groom);
     setText("[data-couple-last]", CONFIG.lastNames);
     setText("[data-couple-full]", CONFIG.fullNames);
-    setText("[data-couple-short]", `${CONFIG.bride} & ${CONFIG.groom}`);
+     setText("[data-couple-short]", `${CONFIG.bride} & ${CONFIG.groom}`);
     setText("[data-signature]", `${CONFIG.bride} & ${CONFIG.groom}`);
     setText("[data-quote]", CONFIG.quote);
 
@@ -103,25 +103,25 @@
   /* =========================================================
      2. PÉTALOS
      ========================================================= */
-  function createPetals() {
-    const container = $("#petals");
+  function createPearls() {
+    const container = $("#pearls");
     if (!container || prefersReducedMotion) return;
 
-    const colors = ["#e9d3c6", "#b5644a", "#8fa085", "#d9c3b0", "#c9a98a", "#c0ae9a"];
-    const count = window.innerWidth < 640 ? 12 : 22;
+    const colors = ["#fffdf8", "#f6eadb", "#ead5c5", "#ffffff"];
+    const count = window.innerWidth < 640 ? 16 : 28;
 
     for (let i = 0; i < count; i += 1) {
-      const petal = document.createElement("span");
-      petal.className = "petal";
-      const size = 8 + Math.random() * 14;
-      petal.style.setProperty("--x", `${Math.random() * 100}%`);
-      petal.style.setProperty("--size", `${size.toFixed(1)}px`);
-      petal.style.setProperty("--drift", `${(Math.random() * 180 - 90).toFixed(0)}px`);
-      petal.style.setProperty("--dur", `${(10 + Math.random() * 10).toFixed(1)}s`);
-      petal.style.setProperty("--delay", `${(-Math.random() * 14).toFixed(1)}s`);
-      petal.style.setProperty("--opacity", (0.3 + Math.random() * 0.35).toFixed(2));
-      petal.style.setProperty("--color", colors[Math.floor(Math.random() * colors.length)]);
-      container.appendChild(petal);
+      const pearl = document.createElement("span");
+      pearl.className = "pearl";
+      const size = 5 + Math.random() * 6;
+      pearl.style.setProperty("--x", `${Math.random() * 100}%`);
+      pearl.style.setProperty("--size", `${size.toFixed(1)}px`);
+      pearl.style.setProperty("--drift", `${(Math.random() * 140 - 70).toFixed(0)}px`);
+      pearl.style.setProperty("--dur", `${(11 + Math.random() * 8).toFixed(1)}s`);
+      pearl.style.setProperty("--delay", `${(-Math.random() * 14).toFixed(1)}s`);
+      pearl.style.setProperty("--opacity", (0.35 + Math.random() * 0.4).toFixed(2));
+      pearl.style.setProperty("--color", colors[Math.floor(Math.random() * colors.length)]);
+      container.appendChild(pearl);
     }
   }
 
@@ -142,15 +142,11 @@
       if (opened) return;
       opened = true;
       openBtn.disabled = true;
-      envelope.classList.add("is-opening");
       overlay.classList.add("is-opening");
 
       const fast = prefersReducedMotion;
-      const t1 = fast ? 120 : 520;
-      const t2 = fast ? 350 : 1650;
-      const t3 = fast ? 650 : 2600;
-
-      window.setTimeout(() => envelope.classList.add("is-letter-out"), t1);
+      const t2 = fast ? 120 : 720;
+      const t3 = fast ? 420 : 1500;
 
       window.setTimeout(() => {
         overlay.classList.add("is-leaving");
@@ -724,7 +720,7 @@
      ========================================================= */
   const init = () => {
     applyConfig();
-    createPetals();
+    createPearls();
     setupEnvelope();
     setupCountdown();
     setupReveal();
