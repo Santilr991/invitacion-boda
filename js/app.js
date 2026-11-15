@@ -14,17 +14,15 @@
     quote: "“Dos vidas, un mismo camino”",
 
     ceremony: {
-      name: "Parroquia [por confirmar]",
+      name: "Iglesia Inmaculada",
       time: "4:00 PM",
-      address: "Dirección por confirmar",
-      mapsUrl: "https://www.google.com/maps/search/?api=1&query=Parroquia",
+      mapsUrl: "https://maps.app.goo.gl/t6i2Spw715Jc4tpR8",
     },
 
     reception: {
-      name: "Salón [por confirmar]",
+      name: "Sorento",
       time: "7:00 PM",
-      address: "Dirección por confirmar",
-      mapsUrl: "https://www.google.com/maps/search/?api=1&query=Sal%C3%B3n%20de%20eventos",
+      mapsUrl: "https://maps.app.goo.gl/B3GeAin8Zb8bgtxS8",
     },
 
    rsvpDeadline: "[fecha límite]",
@@ -83,10 +81,8 @@
     const reception = CONFIG.reception;
     setText("[data-ceremony-name]", ceremony.name);
     setText("[data-ceremony-time]", ceremony.time);
-    setText("[data-ceremony-address]", ceremony.address);
     setText("[data-reception-name]", reception.name);
     setText("[data-reception-time]", reception.time);
-    setText("[data-reception-address]", reception.address);
 
     const ceremonyMaps = $("#ceremonyMaps");
     const receptionMaps = $("#receptionMaps");
