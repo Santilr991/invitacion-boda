@@ -14,7 +14,7 @@
     quote: "“Dos vidas, un mismo camino”",
 
     ceremony: {
-      name: "Iglesia Inmaculada",
+      name: "Iglesia Inmaculada Concepción",
       time: "4:00 PM",
       mapsUrl: "https://maps.app.goo.gl/ByYaQt7G88xxpiAe8?g_st=iw",
     },
@@ -25,7 +25,7 @@
       mapsUrl: "https://maps.app.goo.gl/2VYmACNBgF69FujZ6?g_st=iw",
     },
 
-   rsvpDeadline: "[1 de diciembre de 2026]",
+   rsvpDeadline: "1 de diciembre de 2026",
     maxGuests: 3,
     storageKey: "rsvp-bleidys-miguel",
     sheetsWebhookUrl: "https://script.google.com/macros/s/AKfycbxmI1CZBQKPge7wEZ3Djm5TiwV7eBS7qnHgQ3oyfAyMTnK_S-sJ1M9dRWdfGeU7JOhNoA/exec",
