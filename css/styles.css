@@ -1014,13 +1014,17 @@ body.is-entered .intro-anim {
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  /* Columnas proporcionales a la proporción real de cada foto
+     (galeria1 3:4 · imagen 585:1280 · galeria2 1280:1023):
+     las tres quedan a la misma altura y ninguna se recorta. */
+  grid-template-columns: 750fr 457fr 1251fr;
+  align-items: center;
   gap: clamp(0.6rem, 1.2vw, 1rem);
 }
 
 .gallery-item {
   position: relative;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 896 / 1195;
   padding: 0;
   border: none;
   border-radius: 16px;
@@ -1033,8 +1037,11 @@ body.is-entered .intro-anim {
 }
 
 .gallery-item:nth-child(2) {
-  aspect-ratio: 5 / 4;
-  align-self: center;
+  aspect-ratio: 585 / 1280;
+}
+
+.gallery-item:nth-child(3) {
+  aspect-ratio: 1280 / 1023;
 }
 
 .gallery-item img {
@@ -2007,14 +2014,21 @@ body.is-entered .intro-anim {
 
   .gallery-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .gallery-item {
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 896 / 1195;
   }
 
   .gallery-item:nth-child(2) {
-    aspect-ratio: 5 / 4;
+    aspect-ratio: 585 / 1280;
+    max-width: 68%;
+    margin-inline: auto;
+  }
+
+  .gallery-item:nth-child(3) {
+    aspect-ratio: 1280 / 1023;
   }
 
   .event-grid {
